@@ -14,10 +14,13 @@ def check_recession_ma3():
     
     def export_chart(df):
         sns.set()
-        plot_df = df[['USREC', 'CFNAIMA3']].copy()
+        plot_df = df[['CFNAIMA3']].copy()
         plot_df['threshold'] = -0.7
-        plot_df.columns = ['Recession Periods', 'CFNAI 3-Month Avg', 'Recession Threshold']
-        graph = plot_df.plot(figsize=(12,5))
+        plot_df.columns = ['CFNAI 3-Month Avg', 'Recession Threshold']
+        graph = plot_df.plot(figsize=(14,5))
+        graph.set(xlabel=None)
+        ymin, ymax = graph.get_ylim()
+        graph.fill_between(plot_df.index, ymin, ymax, where=df['USREC'].values, color='gray', alpha=0.3)
         graph.get_figure().savefig(output_directory + '/v001.svg')
 
     result_string = ""

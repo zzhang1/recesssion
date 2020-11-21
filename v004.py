@@ -24,9 +24,12 @@ def check_recession_logistic_lagged_f12m():
     def export_chart(df):
         df = df.set_index('DATE')
         sns.set()
-        plot_df = df[['USREC','prob_recession']].copy()
-        plot_df.columns = ['Recession Periods', 'Probability of Recession Within a Year']
-        graph = plot_df.plot(figsize=(12,5))
+        plot_df = df[['prob_recession']].copy()
+        plot_df.columns = ['Probability of Recession Within a Year']
+        graph = plot_df.plot(figsize=(14,5))
+        graph.set(xlabel=None)
+        ymin, ymax = graph.get_ylim()
+        graph.fill_between(plot_df.index, ymin, ymax, where=df['USREC'].values, color='gray', alpha=0.3)
         graph.get_figure().savefig(output_directory + '/v004.svg')
 
     result_string = ""
