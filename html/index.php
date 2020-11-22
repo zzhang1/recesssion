@@ -30,7 +30,7 @@
                                 <dd aria-hidden="true" class="accordion-content accordionItem is-collapsed" id="v001">
 					
 <p>
-Are we in a recession? "We" in this case only refers to the United States, because data is easy to get. While there are many definitions for what constitutes a recession, the <a href=https://www.chicagofed.org/publications/cfnai/index>Chicago Federal Reserve Bank National Activity Index (CFNAI)</a> is a good monthly indicator, which represents current economic activity, where past recessions periods have coincided with its three-month moving average falling below -0.7.
+Are we in a recession? "We" in this case only refers to the United States (for now, because data is easy to get). While there are many definitions for what constitutes a recession, the <a href=https://www.chicagofed.org/publications/cfnai/index>Chicago Federal Reserve Bank National Activity Index (CFNAI)</a> is a good monthly indicator, which represents current economic activity, where past recessions periods have coincided with its three-month moving average falling below -0.7.
 </p>
 <p>
                                                 Using this moving average, we see: <?php include 'results/v001.txt'; ?>
